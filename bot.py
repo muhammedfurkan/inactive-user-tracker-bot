@@ -23,12 +23,13 @@ def new_message(bot, update):
         chat_id=chat_id, from_id=from_id,
         defaults={'last_commit': message_date}
     )
+    if not created:
+        message.commit_count += 1
     message.save()
     logging.info(
-        '%s | %s | last commit %s',
+        '%s | %s | %-15s | %-11s',
         'created' if created else 'updated',
-        [chat_id, from_id],
-        message_date
+        message_date, chat_id, from_id
     )
 
 

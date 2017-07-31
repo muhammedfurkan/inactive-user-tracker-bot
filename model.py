@@ -10,6 +10,7 @@ class BaseModel(Model):
 
 
 class Message(BaseModel):
-    from_id = IntegerField()
     chat_id = IntegerField()
+    from_id = IntegerField()
     last_commit = DateTimeField()
+    commit_count = IntegerField()
