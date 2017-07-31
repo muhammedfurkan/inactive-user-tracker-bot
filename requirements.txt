@@ -1,0 +1,4 @@
+certifi==2017.7.27.1
+future==0.16.0
+peewee==2.10.1
+python-telegram-bot==7.0.1
