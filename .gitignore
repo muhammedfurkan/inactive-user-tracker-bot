@@ -1,0 +1,7 @@
+/.idea/
+
+__pycache__
+
+/logging.log
+/configure.json
+/messages.db
