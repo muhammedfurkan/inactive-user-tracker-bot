@@ -25,6 +25,7 @@ def new_message(bot, update):
     )
     if not created:
         message.commit_count += 1
+        message.last_commit = message_date
     message.save()
     logging.info(
         '%s | %s | %-15s | %-11s',
