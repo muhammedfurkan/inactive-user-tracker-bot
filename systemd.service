@@ -1,11 +1,11 @@
 [Unit]
 Description = Telegram Inactive User Tracker Bot
-After = syslog.target network.target
+After = network.target
 
 [Service]
 Type = simple
 WorkingDirectory = /opt/inactive-user-tacker-bot
-ExecStart = .env/bin/python bot.py
+ExecStart = /opt/inactive-user-tacker-bot/.env/bin/python bot.py
 Restart = on-abort
 
 [Install]
