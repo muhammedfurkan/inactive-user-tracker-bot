@@ -21,7 +21,7 @@ def new_message(bot, update):
 
     message, created = Message.get_or_create(
         chat_id=chat_id, from_id=from_id,
-        defaults={'last_commit': message_date}
+        defaults=dict(last_commit=message_date, commit_count=0)
     )
     if not created:
         message.commit_count += 1
