@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-echo 'SELECT * FROM message ORDER BY last_commit DESC;' | sqlite3 messages.db -column
+sqlite3 messages.db -column <<SQL
+SELECT * FROM message
+WHERE commit_count >= 10
+ORDER BY last_commit DESC
+LIMIT 50;
+SQL
